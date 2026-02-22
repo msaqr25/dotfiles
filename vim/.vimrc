@@ -48,22 +48,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
 " =========================
-" Visual Mode Surround (No Plugin Version)
-" =========================
-" After selecting text in visual mode:
-" press S"  → surround with "
-" press S'  → surround with '
-" press S(  → surround with ()
-" press S[  → surround with []
-" press S{  → surround with {}
-
-" vnoremap S"  c"<C-r>""<Esc>
-" vnoremap S'  c'<C-r>""'<Esc>
-" vnoremap S(  c(<C-r>"")<Esc>
-" vnoremap S[  c[<C-r>""]<Esc>
-" vnoremap S{  c{<C-r>""}<Esc>
-
-" =========================
-" Nice Colorscheme (builtin)
+" Nice Colorscheme
 " =========================
 colorscheme catppuccin_mocha
