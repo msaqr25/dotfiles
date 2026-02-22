@@ -54,7 +54,8 @@ stow zsh
 
 ```bash
 sudo apt install vim-gtk3 # Vim with system clipboard support
-git clone https://github.com/catppuccin/vim.git ~/.vim/pack/vendor/start/catppuccin # Install Catppuccin theme for vim
+git clone https://github.com/tpope/vim-surround.git ~/.vim/pack/plugins/start/vim-surround
+git clone https://github.com/catppuccin/vim.git ~/.vim/pack/vendor/start/catppuccin
 ```
 
 ### Apply
