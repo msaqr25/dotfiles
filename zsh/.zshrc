@@ -74,6 +74,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # Aliases
 alias c='clear'
 alias py='python'
+alias g='lazygit'
 
 # File system
 if command -v eza &> /dev/null; then
