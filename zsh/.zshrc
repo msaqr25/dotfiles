@@ -75,6 +75,9 @@ eval "$(zoxide init --cmd cd zsh)"
 alias c='clear'
 alias py='python'
 alias g='lazygit'
+alias vim='nvim'
+alias evil='emacs -nw'
+alias ev='emacs -nw'
 
 # File system
 if command -v eza &> /dev/null; then
@@ -106,3 +109,28 @@ open() {
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+. "$HOME/.local/share/../bin/env"
+
+# bun completions
+[ -s "/home/saqr/.bun/_bun" ] && source "/home/saqr/.bun/_bun"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/saqr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/saqr/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/saqr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/saqr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.local/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_USER_HOME=$HOME/.android
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+export PATH=$PATH:/home/saqr/.local/share/mise/installs/go/1.26.4/bin
+
+export PATH=$PATH:$HOME/.config/emacs/bin/
