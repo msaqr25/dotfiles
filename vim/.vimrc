@@ -15,7 +15,10 @@ set cursorline
 set showcmd
 set wildmenu
 set hidden
-set clipboard=unnamedplus     " Use system clipboard
+" MacOS
+set clipboard=unnamed         " Use system clipboard
+" Linux
+"set clipboard=unnamedplus         " Use system clipboard
 set ignorecase
 set smartcase
 set incsearch

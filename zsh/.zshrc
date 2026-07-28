@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -73,9 +78,8 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Aliases
 alias c='clear'
-alias py='python'
+alias py='python3'
 alias g='lazygit'
-alias vim='nvim'
 alias evil='emacs -nw'
 alias ev='emacs -nw'
 
@@ -102,35 +106,12 @@ if command -v zoxide &> /dev/null; then
   }
 fi
 
-open() {
-  xdg-open "$@" >/dev/null 2>&1 &
-}
-
-. "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
-. "$HOME/.local/share/../bin/env"
-
-# bun completions
-[ -s "/home/saqr/.bun/_bun" ] && source "/home/saqr/.bun/_bun"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/saqr/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/saqr/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/saqr/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/saqr/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="$HOME/.local/bin:$PATH"
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 
-export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_USER_HOME=$HOME/.android
-export PATH=$PATH:$ANDROID_HOME/emulator
-
-export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
-export PATH=$PATH:/home/saqr/.local/share/mise/installs/go/1.26.4/bin
-
-export PATH=$PATH:$HOME/.config/emacs/bin/
